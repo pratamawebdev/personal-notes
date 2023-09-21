@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+.dark-theme {
+  --bg-color: black;
+  --text-color: white;
+}
+
+body {
+  height: 0;
+}
+
+.app {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+}
+
+input,
+textarea {
+  padding: 12px;
+  margin: 12px 0;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.notes-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 16px;
+  border-bottom: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.notes-nav-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.notes-nav-left img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 30px;
+  margin-right: 5px;
+}
+
+.notes-nav-left h1 {
+  margin: 8px 0;
+  flex: 1;
+  color: var(--text-color);
+}
+
+.notes-body {
+  max-width: 1000px;
+  margin: 16px auto;
+  padding: 12px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.notes-body h2 {
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+.notes-input {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-bottom: 48px;
+}
+
+.notes-input input,
+.notes-input textarea {
+  display: block;
+  width: 100%;
+}
+
+.notes-input-title {
+  font-weight: bold;
+}
+
+.notes-input-title-char-limit {
+  font-size: 14px;
+  text-align: right;
+  color: var(--text-color);
+}
+
+.notes-input-body {
+  min-height: 175px;
+}
+
+.notes-input button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(min-content, max-content);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.empty-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-notes img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 20vh;
+}
+
+.notes-list-empty-message {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.notes-item {
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-item-content {
+  padding: 12px;
+  flex: 1 1;
+}
+
+.notes-item-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.notes-item-date {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.notes-item-body {
+  font-size: 14px;
+}
+
+.notes-item-action {
+  display: flex;
+}
+
+.notes-item-delete-button,
+.notes-item-archive-button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--text-color);
+  padding: 8px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notes-item-delete-button {
+  border-right: 1px solid var(--text-color);
+  color: #ff5f52;
+}
+
+.notes-item-archive-button {
+  color: orange;
+}
+
+.notes-item-archive-button:hover {
+  color: chocolate;
+}
+
+.notes-item-delete-button:hover {
+  color: #b00020;
+}
+
+@media only screen and (min-width: 500px) {
+  .notes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .notes-nav-right input {
+    min-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.toggleTheme {
+  background-color: rgb(216, 237, 140);
+  padding: 5px 6px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggleTheme:hover {
+  background-color: rgb(191, 220, 84);
+}
